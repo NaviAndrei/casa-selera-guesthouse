@@ -89,6 +89,28 @@
             }
         }
     });
+
+    // Function to update hero search placeholder
+    function updateHeroSearchPlaceholder() {
+        const heroSearchInput = document.getElementById('heroSearchInput');
+        if (heroSearchInput) { // Check if the element exists
+            if (window.innerWidth >= 768) { // Bootstrap's md breakpoint (768px)
+                heroSearchInput.placeholder = "Verifică disponibilitatea camerelor...";
+            } else {
+                heroSearchInput.placeholder = "Ex: 2 adulți, 3 nopți";
+            }
+        }
+    }
+
+    // Update placeholder on page load
+    $(document).ready(function() {
+        updateHeroSearchPlaceholder();
+    });
+
+    // Update placeholder on window resize
+    $(window).resize(function() {
+        updateHeroSearchPlaceholder();
+    });
     
 })(jQuery);
 
